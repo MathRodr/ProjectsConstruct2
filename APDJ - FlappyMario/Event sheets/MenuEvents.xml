@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>MenuEvents</name>
+    <events>
+        <event-block sid="832449341137985">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="964255058740218" type="System">
+                    <param id="0" name="Interval (seconds)">1.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="152659436096616" type="ButtonStart">
+                    <param id="0" name="&apos;On&apos; time">0.5</param>
+                    <param id="1" name="&apos;Off&apos; time">0.5</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="394226390869819">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="530958915961052" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="836819677381755" type="Audio" />
+                <action id="0" name="Play" sid="658994517212178" type="Audio">
+                    <param id="0" name="Audio file">MenuMarioSong</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;Menu&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="724386130682897">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="660539080571317" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ButtonStart</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="222948499721867" type="System">
+                    <param id="0" name="Layout">Level</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

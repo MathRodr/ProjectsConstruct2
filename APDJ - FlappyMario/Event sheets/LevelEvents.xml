@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelEvents</name>
+    <events>
+        <variable constant="0" name="Score" sid="765995596306001" static="0" type="number">0</variable>
+        <variable comment="0=false 1=true" constant="0" name="MarioIsAlive" sid="205686327363857" static="0" type="number">0</variable>
+        <variable constant="0" name="PipeVelocity" sid="837166454399035" static="0" type="number">180</variable>
+        <variable constant="0" name="PipePerSecond" sid="819354283739413" static="0" type="number">1.8</variable>
+        <variable constant="1" name="STRENGTH_JUMP" sid="882114462375376" static="0" type="number">500</variable>
+        <variable constant="1" name="VELOCITY_GROUND" sid="606940008840022" static="0" type="number">180</variable>
+        <event-block sid="529206592476971">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="633200112539357" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="787356114579632" type="Audio" />
+                <action id="0" name="Play" sid="511911598839488" type="Audio">
+                    <param id="0" name="Audio file">OverworldMario</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;Level&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="444450891436050" type="System">
+                    <param id="0" name="Variable">MarioIsAlive</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="1" name="Set session value" sid="285308452459480" type="WebStorage">
+                    <param id="0" name="Key">&quot;TopScore&quot;</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="971469970456918" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="151372215024239">
+            <conditions>
+                <condition id="0" name="On function" sid="879517948490475" type="Function">
+                    <param id="0" name="Name">&quot;DeathMario&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="949114038240718" type="System">
+                    <param id="0" name="Variable">MarioIsAlive</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="33" name="Stop all" sid="245901165447361" type="Audio" />
+                <action id="0" name="Play" sid="882783342585843" type="Audio">
+                    <param id="0" name="Audio file">MarioDown</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;GameOver&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="245076668474075" type="Mario">
+                    <param id="0" name="Animation">&quot;Dying&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="651461172883116" type="Mario">
+                    <param id="0" name="Vector Y">-400</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="953048125516118">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="756204420911241" type="System">
+                    <param id="0" name="Variable">MarioIsAlive</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-group description="" sid="596109146783468" title="Collision Control">
+                    <sub-events>
+                        <event-block any="1" sid="727365422821124">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="329617077868781" type="Mario">
+                                    <param id="0" name="Object">Ground</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="139392820037173" type="Mario">
+                                    <param id="0" name="Object">Roof</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="369129421855111" type="Mario">
+                                    <param id="0" name="Object">BottomPipe</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="246913866365265" type="Mario">
+                                    <param id="0" name="Object">TopPipe</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="140246678017234" type="Function">
+                                    <param id="0" name="Name">&quot;DeathMario&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="417543710643622" title="Obstacle Control">
+                    <sub-events>
+                        <event-block sid="674182203906593">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="829459428318289" type="System">
+                                    <param id="0" name="Interval (seconds)">PipePerSecond</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="976452162290293" type="System">
+                                    <param id="0" name="Object to create">TopPipe</param>
+                                    <param id="1" name="Layer">&quot;Obstaculo&quot;</param>
+                                    <param id="2" name="X">550</param>
+                                    <param id="3" name="Y">random(20,170)</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="213689494890981" type="System">
+                                    <param id="0" name="Object to create">BottomPipe</param>
+                                    <param id="1" name="Layer">&quot;Obstaculo&quot;</param>
+                                    <param id="2" name="X">TopPipe.X</param>
+                                    <param id="3" name="Y">TopPipe.Y + 165</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="167537000267680" type="System">
+                                    <param id="0" name="Object to create">TriggerScore</param>
+                                    <param id="1" name="Layer">&quot;Obstaculo&quot;</param>
+                                    <param id="2" name="X">TopPipe.X</param>
+                                    <param id="3" name="Y">TopPipe.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="912417110386859">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="412126604295167" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="487167906530117" type="TopPipe">
+                                    <param id="0" name="X">TopPipe.X - PipeVelocity*dt</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="767981168512299" type="BottomPipe">
+                                    <param id="0" name="X">BottomPipe.X - PipeVelocity*dt</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="979866448474934" type="TriggerScore">
+                                    <param id="0" name="X">TriggerScore.X - PipeVelocity * dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="444946507588912" title="Player Control">
+                    <sub-events>
+                        <event-block sid="880316390141487">
+                            <conditions>
+                                <condition id="1" name="On any click" sid="702288164464660" type="Mouse" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Platform" id="9" name="Set vector Y" sid="683049193180342" type="Mario">
+                                    <param id="0" name="Vector Y">- STRENGTH_JUMP</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="104581769622183" type="Mario">
+                                    <param id="0" name="Animation">&quot;Flying&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="853087789485400" type="Audio">
+                                    <param id="0" name="Audio file">MarioFly</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-10</param>
+                                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="724762215920654">
+                            <conditions>
+                                <condition behavior="Platform" id="4" name="Is falling" sid="553335670781170" type="Mario" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="420876028382702" type="Mario">
+                                    <param id="0" name="Animation">&quot;Falling&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="762426644527250" title="Parallax Effect">
+                    <sub-events>
+                        <event-block sid="753264056180659">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="784933604544726" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="986692507665206" type="Ground">
+                                    <param id="0" name="X">Self.X - VELOCITY_GROUND * dt</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="544510980547818">
+                            <conditions>
+                                <condition id="-1" name="Compare X" sid="611657262358616" type="Ground">
+                                    <param id="0" name="Comparison">3</param>
+                                    <param id="1" name="X co-ordinate">-431</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="718281156363274" type="Ground">
+                                    <param id="0" name="X">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-block>
+        <event-block sid="715197428574085">
+            <conditions>
+                <condition id="0" name="On ended" sid="473891974530776" type="Audio">
+                    <param id="0" name="Tag">&quot;GameOver&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="543084994689388" type="System">
+                    <param id="0" name="Layout">GameOver</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="456734837934023" title="Score Control">
+            <sub-events>
+                <event-block sid="687545788982716">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="811395814009922" type="Mario">
+                            <param id="0" name="Object">TriggerScore</param>
+                        </condition>
+                        <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="257192911843661" type="TriggerScore">
+                            <param id="0" name="Instance variable">IsScored</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="611438411615969" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="426920503794941" type="Score">
+                            <param id="0" name="Text">Score</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="716616064944563" type="TriggerScore">
+                            <param id="0" name="Instance variable">IsScored</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="268492399859604">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="704660875091865" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">WebStorage.LocalValue(&quot;TopScore&quot;)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="707851181706184" type="WebStorage">
+                            <param id="0" name="Key">&quot;TopScore&quot;</param>
+                            <param id="1" name="Value">Score</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

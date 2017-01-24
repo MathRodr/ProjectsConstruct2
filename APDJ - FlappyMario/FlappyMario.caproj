@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>FlappyMario</name>
+    <description></description>
+    <version>1.0</version>
+    <author>Matheus Rodrigues</author>
+    <author-email>matheusrodr@gmail.com</author-email>
+    <author-website></author-website>
+    <app-id>com.flappymario</app-id>
+    <unique-id>2qpiupr2gjili</unique-id>
+    <saved-with-version>23900</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+        <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>500</width>
+        <height>400</height>
+    </window-size>
+    <pixel-rounding>1</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">No</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox integer scale</prop>
+        <prop name="Fullscreen scaling">Low quality</prop>
+        <prop name="Fullscreen scaling quality">Low</prop>
+        <prop name="Hide address bar">No</prop>
+        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Preview browser">NW.js</prop>
+        <prop name="Sampling">Point</prop>
+        <prop name="Use iOS retina display">All devices</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="WebStorage" sid="1510269620771624">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="Gamepad" sid="996683554706134">
+            <plugin id="gamepad" />
+        </object-type>
+        <object-type name="Keyboard" sid="4436305314906168">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Mouse" sid="3506161195311074">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Touch" sid="2463496682349194">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Audio" sid="2722091819329769">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="Browser" sid="3498868852026895">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="Sprite" sid="331152439209942">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="318307298304003" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Menu.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TitleMenu" sid="796624472996866">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="441558506549563" speed="5">
+                    <frame duration="1" hotspotX="0.50152" hotspotY="0.506173" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Title.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonStart" sid="581527623644164">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="320050934878610">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="469618746650981" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Buttons.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="972298813967032">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="177342735789301" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Background.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Ground" sid="731501337568564">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Ground.png" />
+        </object-type>
+        <object-type name="Mario" sid="441027272339819">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="592791940187954">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Flying" pingpong="0" repeatcount="1" repeatto="0" sid="194388406868084" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\MarioFlying.png">
+                        <collision-poly>
+                            <point x="0.178125" y="0.234375" />
+                            <point x="0.534375" y="0.109375" />
+                            <point x="0.890625" y="0.353125" />
+                            <point x="0.865625" y="0.56875" />
+                            <point x="0.73125" y="0.75" />
+                            <point x="0.5625" y="0.871875" />
+                            <point x="0.303125" y="0.815625" />
+                            <point x="0.159375" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Falling" pingpong="0" repeatcount="1" repeatto="0" sid="260660359084282" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\MarioFlying.png">
+                        <collision-poly>
+                            <point x="0.2375" y="0.2625" />
+                            <point x="0.48125" y="0.15" />
+                            <point x="0.74375" y="0.290625" />
+                            <point x="0.828125" y="0.51875" />
+                            <point x="0.825" y="0.815625" />
+                            <point x="0.49375" y="0.840625" />
+                            <point x="0.234375" y="0.74375" />
+                            <point x="0.134375" y="0.565625" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Dying" pingpong="0" repeatcount="1" repeatto="0" sid="861070070476012" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\MarioDead.png">
+                        <collision-poly>
+                            <point x="0.3375" y="0.271875" />
+                            <point x="0.4875" y="0.171875" />
+                            <point x="0.65625" y="0.25625" />
+                            <point x="0.71875" y="0.565625" />
+                            <point x="0.66875" y="0.80625" />
+                            <point x="0.515625" y="0.803125" />
+                            <point x="0.290625" y="0.728125" />
+                            <point x="0.303125" y="0.496875" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TopPipe" sid="893681669577547">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="794369235553712">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="411274088179624" speed="5">
+                    <frame duration="1" hotspotX="0.516129" hotspotY="1" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Pipe.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BottomPipe" sid="153352329315909">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="802505795464337">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="165694496382770" speed="5">
+                    <frame duration="1" hotspotX="0.516129" hotspotY="0" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Pipe.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Roof" sid="926782357006880">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="607262646380702" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Function" sid="850888964086972">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Sprite3" sid="687210564818823">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="820977669141433" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BackgroundGameOver" sid="912120551301707">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="284162312564664" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Background.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TitleGameOver" sid="732222484848232">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="344646920374849" speed="5">
+                    <frame duration="1" hotspotX="0.50152" hotspotY="0.506173" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\GameOver.png">
+                        <collision-poly>
+                            <point x="0.0699088" y="0.283951" />
+                            <point x="0.902736" y="0.395062" />
+                            <point x="0.93921" y="0.493827" />
+                            <point x="0.924012" y="0.691358" />
+                            <point x="0.0699088" y="0.716049" />
+                            <point x="0.0212766" y="0.493827" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonMenu" sid="601770841194373">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="349101996125289" speed="5">
+                    <frame duration="1" hotspotX="0.503759" hotspotY="0.5" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Buttons.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ButtonTryAgain" sid="877187434953620">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="572525759123832" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.510638" original-source="D:\Matheus\DevGames\APDJ - Construct\Assets - Projeto 1\Images\Buttons.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Score" sid="865872033848396">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TriggerScore" sid="230518400795626">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="IsScored" sid="820686991029670" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="DestroyOutsideLayout" sid="150050226864270">
+                    <behavior id="destroy" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="479044883601185" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TopScore" sid="674205815858613">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LastScore" sid="197544740068390">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Menu.xml</layout>
+        <layout>Level.xml</layout>
+        <layout>GameOver.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>MenuEvents.xml</event-sheet>
+        <event-sheet>LevelEvents.xml</event-sheet>
+        <event-sheet>GameOverEvents.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="WebStorage" uid="1" />
+        <global-instance type="Gamepad" uid="2">
+            <properties>
+                <analog-deadzone>25</analog-deadzone>
+            </properties>
+        </global-instance>
+        <global-instance type="Keyboard" uid="3" />
+        <global-instance type="Mouse" uid="4" />
+        <global-instance type="Touch" uid="5">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Audio" uid="6">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="7" />
+        <global-instance type="Function" uid="16" />
+    </global-instances>
+    <sounds-folder>
+        <file name="GameOver.m4a" />
+        <file name="GameOver.ogg" />
+        <file name="MarioDown.m4a" />
+        <file name="MarioDown.ogg" />
+        <file name="MarioFly.m4a" />
+        <file name="MarioFly.ogg" />
+        <file name="MenuMarioSong.m4a" />
+        <file name="MenuMarioSong.ogg" />
+        <file name="OverworldMario.m4a" />
+        <file name="OverworldMario.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

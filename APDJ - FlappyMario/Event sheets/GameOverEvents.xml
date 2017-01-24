@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameOverEvents</name>
+    <events>
+        <event-block sid="548996020409455">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="472655791026610" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="690805785158504" type="Audio" />
+                <action id="0" name="Play" sid="939064880820545" type="Audio">
+                    <param id="0" name="Audio file">GameOver</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">-15</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="212922569421484" type="TopScore">
+                    <param id="0" name="Text">&quot;Record: &quot; &amp; WebStorage.LocalValue(&quot;TopScore&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="300158929809617" type="LastScore">
+                    <param id="0" name="Text">&quot;Last:&quot; &amp; Score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="472717542096081">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="475686883440887" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ButtonMenu</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="325225836516835" type="System">
+                    <param id="0" name="Layout">Menu</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="600512140560472">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="821203391743250" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">ButtonTryAgain</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="483366924377841" type="System">
+                    <param id="0" name="Layout">Level</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
