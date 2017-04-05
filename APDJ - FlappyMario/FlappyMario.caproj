@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
     <name>FlappyMario</name>
-    <description></description>
+    <description>This a test of project</description>
     <version>1.0</version>
     <author>Matheus Rodrigues</author>
     <author-email>matheusrodr@gmail.com</author-email>
